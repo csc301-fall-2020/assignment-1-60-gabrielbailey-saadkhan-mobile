@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/itemsListFragment">
+
+    <fragment
+        android:id="@+id/finalCartFragment"
+        android:name="com.example.checkoutcart.views.FinalCartFragment"
+        android:label="Cart"
+        tools:layout="@layout/fragment_final_cart">
+        <action
+            android:id="@+id/action_finalCartFragment_to_itemsListFragment"
+            app:destination="@id/itemsListFragment" />
+        <action
+            android:id="@+id/action_finalCartFragment_to_payAndFinishFragment"
+            app:destination="@id/payAndFinishFragment"
+            app:popUpTo="@id/itemsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemsListFragment"
+        android:name="com.example.checkoutcart.views.ItemsListFragment"
+        android:label="Products"
+        tools:layout="@layout/fragment_items_list">
+        <action
+            android:id="@+id/action_itemsListFragment_to_finalCartFragment"
+            app:destination="@id/finalCartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/payAndFinishFragment"
+        android:name="com.example.checkoutcart.views.PayAndFinishFragment"
+        android:label="Pay"
+        tools:layout="@layout/fragment_pay_and_finish">
+        <action
+            android:id="@+id/action_payAndFinishFragment_to_itemsListFragment"
+            app:destination="@id/itemsListFragment" />
+    </fragment>
+</navigation>
