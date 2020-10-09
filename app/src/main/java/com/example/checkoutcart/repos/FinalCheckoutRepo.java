@@ -12,8 +12,8 @@ import java.util.UUID;
 
 public class FinalCheckoutRepo {
     String NO_IMAGE_AVAILABLE = "https://firebasestorage.googleapis.com/v0/b/csc309-a1.appspot.com/o/No-image-available.png?alt=media&token=582117fe-3563-4c29-9058-de866b20a23a";
-    private MutableLiveData<List<ProductInCart>> mutableCart = new MutableLiveData<>();
-    private MutableLiveData<Double> mutableTotalPrice = new MutableLiveData<>();
+    protected MutableLiveData<List<ProductInCart>> mutableCart = new MutableLiveData<>();
+    protected MutableLiveData<Double> mutableTotalPrice = new MutableLiveData<>();
 
     public LiveData<List<ProductInCart>> getCart(){
         if (mutableCart.getValue() == null){
@@ -119,5 +119,9 @@ public class FinalCheckoutRepo {
             return mutableTotalPrice;
         }
         return mutableTotalPrice;
+    }
+
+    public void emptyList(){
+        initCart();
     }
 }

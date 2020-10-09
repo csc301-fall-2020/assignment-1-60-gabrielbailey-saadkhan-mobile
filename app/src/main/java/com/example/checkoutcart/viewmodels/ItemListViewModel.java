@@ -49,4 +49,8 @@ public class ItemListViewModel extends ViewModel {
     public void filterList(String category){
         itemListRepo.filterList(category);
     }
+
+    public void emptyList(){
+        finalCheckoutRepo.emptyList();
+    }
 }

@@ -72,6 +72,7 @@ public class FinalCartFragment extends Fragment implements CartListAdapter.CartI
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.payAndFinishFragment);
+                itemListViewModel.emptyList();
             }
         });
     }
